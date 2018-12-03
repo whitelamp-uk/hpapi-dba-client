@@ -14,5 +14,14 @@ export class HpapiDba {
         console.table (this.api.cfg);
     }
 
+    handlebars (template) {
+alert ('HpapiDba.handlebars()');
+        this.template   = handlebars;
+    }
+
+    sayHello ( ) {
+alert ('Hello. There -  I\'ve said it!');
+    }
+
 }
 
