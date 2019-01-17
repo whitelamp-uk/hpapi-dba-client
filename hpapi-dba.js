@@ -10,7 +10,7 @@ export class HpapiDba {
         this.api.log ('Greetings human; this is HpapiDba speaking');
     }
 
-    rowsSelect (email,spec) {
+    async rowsSelect (email,spec) {
     var request = {
             "email" : email,
             "method": {
@@ -23,7 +23,13 @@ export class HpapiDba {
                 ]
             }
         }
-        return this.api.request (request);
+        try {
+        var response    = await this.api.request (request);
+        }
+        catch (e) {
+            throw new Error (e.message);
+        }
+        return response;
     }
 
 }
